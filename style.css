@@ -63,10 +63,17 @@ body{
     padding-right: 10px;
     border: #ECECEC  solid 2px;
     border-radius: 8px;
+    text-overflow: hidden;
+    overflow: hidden;
 }
 
-p{
+p #displayText{
     text-align: right;
+}
+
+#displayAnswer{
+    text-align: center;
+    display: inline;
 }
 
 #btn0{
