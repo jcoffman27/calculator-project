@@ -1,0 +1,157 @@
+:root{
+    font-family: arial, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 34px;
+    color: #202124;
+    font-weight: 400;
+}
+
+body{
+    padding-left: 400px;
+    padding-right: 400px;
+    padding-top: 150px;
+}
+
+#calculatorBody{
+    padding: 25px;
+    border: #DFE1E5 solid 1px;
+    padding-bottom: 50px;
+    background-color: rgb(255, 255, 255);
+}
+
+.btnStyle{
+    background-color: #F8F9FA;
+    border: #F8F9FA solid 1px;
+    border-radius: 5px;
+    margin: 3px;
+    height: 34px;
+    width: 80px;
+
+}
+
+.btnSpecialStyle{
+    background-color:#4285F4;
+}
+
+.btnOtherStyle{
+    background-color: #DADCE0;
+}
+
+.btnOtherStyle2{
+    background-color: #e9847d;
+}
+
+#buttonsWrapper{
+    display: grid;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-columns: 25% 25% 25% 25%;
+    
+}
+
+#display{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    height: 35px;
+    width: 93%;
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+    background-color: white;
+    text-align: right;
+    padding-right: 10px;
+    border: #ECECEC  solid 2px;
+    border-radius: 8px;
+}
+
+p{
+    text-align: right;
+}
+
+#btn0{
+    grid-column-start: 1;
+    grid-row-start: 5;
+}
+
+#btnDecimal{
+    grid-column-start: 2;
+    grid-row-start: 5;
+}
+
+#btnEquals{
+    grid-column-start: 3;
+    grid-row-start: 5;
+}
+
+#btn1{
+    grid-column-start: 1;
+    grid-row-start: 4;
+}
+
+#btn2{
+    grid-column-start: 2;
+    grid-row-start: 4;
+}
+
+#btn3{
+    grid-column-start: 3;
+    grid-row-start: 4;
+}
+
+#btn4{
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+#btn5{
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
+#btn6{
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+#btn7{
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+#btn8{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+#btn9{
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+#btnPlus{
+    grid-column-start: 4;
+    grid-row-start: 5;
+}
+
+#btnMinus{
+    grid-column-start: 4;
+    grid-row-start: 4; 
+}
+
+#btnMultiply{
+    grid-column-start: 4;
+    grid-row-start: 3;
+    
+}
+
+#btnDivide{
+    grid-column-start: 4;
+    grid-row-start: 2;
+    
+}
+
+#btnReset{
+    grid-column-start: 4;
+    grid-row-start: 1;
+}

@@ -39,5 +39,3 @@ function operate(){
         return operate();
     };
 };
-
-operate();
