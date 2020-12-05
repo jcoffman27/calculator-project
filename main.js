@@ -1,8 +1,9 @@
 let operation = " ";
 let tempNumberHolder = "0";
+let tempNumberHolder2 = "0";
 let displayAnswer = document.getElementById("displayAnswer");
-
-
+let x = 0;
+let storage = 0;
 
 //When a button 0-9 is clicked we add to the display
 let displayText = document.getElementById("displayText");
@@ -10,7 +11,6 @@ let displayText = document.getElementById("displayText");
 let btn0 = document.getElementById("btn0");
 function displayZero(e){
     displayText.textContent = displayText.textContent + "0";
-    console.log(e);
 }
 btn0.addEventListener("click", displayZero);
 
@@ -24,7 +24,6 @@ function displayOne(e){
     } else {
         displayText.textContent = displayText.textContent + "1";
     };
-    console.log(displayText.textContent);
 }
 btn1.addEventListener("click", displayOne);
 
@@ -35,7 +34,6 @@ function displayTwo(e){
     } else {
         displayText.textContent = displayText.textContent + "2";
     };
-    console.log(displayText.textContent);
 }
 btn2.addEventListener("click", displayTwo);
 
@@ -48,7 +46,6 @@ function displayThree(e){
     };
     console.log(displayText.textContent);
 }
-btn3.addEventListener("click", displayThree);
 
 let btn4 = document.getElementById("btn4");
 function displayFour(e){
@@ -57,7 +54,6 @@ function displayFour(e){
     } else {
         displayText.textContent = displayText.textContent + "4";
     };
-    console.log(displayText.textContent);
 }
 btn4.addEventListener("click", displayFour);
 
@@ -68,7 +64,6 @@ function displayFive(e){
     } else {
         displayText.textContent = displayText.textContent + "5";
     };
-    console.log(displayText.textContent);
 }
 btn5.addEventListener("click", displayFive);
 
@@ -79,7 +74,6 @@ function displaySix(e){
     } else {
         displayText.textContent = displayText.textContent + "6";
     };
-    console.log(displayText.textContent);
 }
 btn6.addEventListener("click", displaySix);
 
@@ -90,7 +84,6 @@ function displaySeven(e){
     } else {
         displayText.textContent = displayText.textContent + "7";
     };
-    console.log(displayText.textContent);
 }
 btn7.addEventListener("click", displaySeven);
 
@@ -101,7 +94,6 @@ function displayEight(e){
     } else {
         displayText.textContent = displayText.textContent + "8";
     };
-    console.log(displayText.textContent);
 }
 btn8.addEventListener("click", displayEight);
 
@@ -112,7 +104,6 @@ function displayNine(e){
     } else {
         displayText.textContent = displayText.textContent + "9";
     };
-    console.log(displayText.textContent);
 }
 btn9.addEventListener("click", displayNine);
 
@@ -121,13 +112,18 @@ function displayReset(e){
     displayText.textContent = "0";
     tempNumberHolder = displayText.textContent;
     displayAnswer.textContent = tempNumberHolder;
-    console.log(e);
 }
 btnReset.addEventListener("click", displayReset);
 
 function functionalReset(e){
-    displayText.textContent = tempNumberHolder;
     displayText.textContent = "0";
+    tempNumberHolder = "0";
+    displayAnswer.textContent = "0";
+}
+
+function functionalReset2(e){
+    displayText.textContent = "0";
+    tempNumberHolder = "0";
 }
 
 let btnPlus = document.getElementById("btnPlus");
@@ -141,15 +137,35 @@ function addTogether(e){
 btnPlus.addEventListener("click", addTogether);
 
 let btnMinus = document.getElementById("btnMinus");
+
+
+//Eureka! The program is subtracting from zero when clicking minus at first so I will need to add an if statement to correct this behavior.
 function subtractTogether(e){
-    tempNumberHolder = subtract(parseInt(displayText.textContent), tempNumberHolder);
-        function subtract(num1, num2){
-            let value = (num1) - (num2);
-            return -value;
-        };
-    tempNumberHolder = parseInt(tempNumberHolder);
-    displayAnswer.textContent = parseInt(tempNumberHolder);
+    
+    if(storage == displayAnswer.textContent){
+    
+    displayAnswer.textContent = parseInt(displayText.textContent) - parseInt(tempNumberHolder);
+    storage = parseInt(displayAnswer.textContent);
+    console.log(storage);
+    console.log("im in the if part");
     functionalReset();
+    
+    
+    }else{
+    //answer = 0 
+    //displayText = 0
+    //tempNumber = 0
+    let newNumber = displayText.textContent;
+    
+    displayAnswer.textContent = parseInt(storage) - parseInt(newNumber);
+    //0 = 5 - 5
+    console.log(displayAnswer.textContent);
+    console.log("im in the else part");
+
+    functionalReset2();
+    //displayText = 0
+    //tempNumber = 0
+    };
 
 }
 btnMinus.addEventListener("click", subtractTogether);
