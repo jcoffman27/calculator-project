@@ -1,3 +1,4 @@
+
 :root{
     font-family: arial, sans-serif;
     font-style: normal;
@@ -5,29 +6,44 @@
     line-height: 34px;
     color: #202124;
     font-weight: 400;
+    box-sizing: border-box;
 }
 
-body{
-    padding-left: 400px;
-    padding-right: 400px;
-    padding-top: 150px;
-}
 
-#calculatorBody{
-    padding: 25px;
+
+#calculator-grid{
     border: #DFE1E5 solid 1px;
-    padding-bottom: 50px;
+    border-bottom: none;
     background-color: rgb(255, 255, 255);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 150px;
+    grid-template-rows: repeat(4, 90px);
+    grid-template-columns:  repeat(4, 110px);
 }
 
 .btnStyle{
     background-color: #F8F9FA;
     border: #F8F9FA solid 1px;
     border-radius: 5px;
-    margin: 3px;
-    height: 34px;
-    width: 80px;
+    height: 60px;
+    width: 100px;
+    
 
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    outline: none;
+    font-size: 1.2rem;
+
+}
+
+.btnStyle:hover{
+    background-color:(#F8F9FA);
+    opacity: .75;
 }
 
 .btnSpecialStyle{
@@ -42,29 +58,35 @@ body{
     background-color: #e9847d;
 }
 
-#buttonsWrapper{
-    display: grid;
-    grid-template-rows: 25% 25% 25% 25%;
-    grid-template-columns: 25% 25% 25% 25%;
-    
-}
-
-#display{
+#output{
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
-    height: 35px;
-    width: 93%;
-    justify-content: center;
-    text-align: center;
-    justify-items: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 50px;
+    padding: 10px;
+    width: 89%;
     background-color: white;
     text-align: right;
-    padding-right: 10px;
     border: #ECECEC  solid 2px;
     border-radius: 8px;
     text-overflow: hidden;
     overflow: hidden;
+}
+
+.output .previous-operand{
+    color: rgba(49, 48, 48, 0.75);
+    font-size: 1.25rem;
+}
+
+.output .current-operand{
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 2.5rem;
 }
 
 p #displayText{
